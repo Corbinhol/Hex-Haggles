@@ -6,6 +6,8 @@ extends Node2D
 @onready var move_animation: AnimationPlayer = $"Move Animation"
 @onready var appear_sound: AudioStreamPlayer2D = $"Appear Sound"
 @onready var nametag_move: AnimationPlayer = $"Name-tag/Nametag Move"
+@onready var arrow_move: AnimationPlayer = $Arrow/Move
+@onready var arrow_appear: AnimationPlayer = $Arrow/Appear
 
 
 const char_interval = .05;
@@ -13,12 +15,16 @@ const max_characters = 90;
 var target_text = "";
 var pos = 1;
 var is_typing = false;
+var is_shown = false;
 
-func _appear():
+func appear():
 	move_animation.play("Move Up")
 	appear_sound.play()
-func _dissapear():
-	visible = false;
+	is_shown = true;
+func dissapear():
+	move_animation.play("Hide")
+	appear_sound.play()
+	is_shown = false
 func _update_label():
 	label.text = target_text.substr(0, pos)
 func _reset():
@@ -54,7 +60,6 @@ func _format_string(string):
 
 func start_dialogue(text, name):
 	_reset();
-	_appear();
 	target_text = _format_string(text);
 	name_label.text = name;
 	is_typing = true;
@@ -63,7 +68,6 @@ func start_dialogue(text, name):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	visible = false
 	_reset();
 	pass # Replace with function body.
@@ -84,6 +88,7 @@ func _on_text_timer_timeout() -> void:
 		_update_label();
 		
 		if label.text == target_text or pos == max_characters * 2:
+			arrow_appear.play("Appear")
 			is_typing = false;
 			text_timer.stop();
 	pass # Replace with function body.

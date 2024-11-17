@@ -21,8 +21,18 @@ func _remove_from_queue(pos):
 		queue = out_queue
 	pass
 
+func get_current():
+	return queue.get(0);
+	
+func get_next():
+	return queue.get(1);
+	
+func shift_queue():
+	_remove_from_queue(0)
+
 func create(action : int = action_types.WAIT):
-	var item = QueueItem.new;
+	var item = QueueItem.new();
+	item.action = action
 	return item;
 
 func add_idle():

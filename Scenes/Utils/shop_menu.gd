@@ -1,9 +1,12 @@
 extends Node2D
 @onready var move_animation: AnimationPlayer = $"Move Animation"
+@onready var open_sound: AudioStreamPlayer2D = $"Open Sound"
+
 var is_visible = false
 
 func show_menu():
 	is_visible = true
+	open_sound.play()
 	move_animation.play("Show")
 	pass
 func hide_menu():
