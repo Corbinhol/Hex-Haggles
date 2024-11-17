@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bq7demc1trsb4"
+path="res://.godot/imported/pencil-4.ogg-a8541754309582f78eac806ec9e79115.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Pencil Writing/pencil-4.ogg"
+dest_files=["res://.godot/imported/pencil-4.ogg-a8541754309582f78eac806ec9e79115.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

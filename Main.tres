@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://sg2amtxaolkr"]
+
+[ext_resource type="FontFile" uid="uid://cqd0j1jbqxukd" path="res://Assets/Font/ShadowsIntoLight-Regular.ttf" id="1_gm7to"]
+
+[resource]
+default_font = ExtResource("1_gm7to")
+default_font_size = 32

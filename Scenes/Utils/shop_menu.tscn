@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://eyw04c48vkcd"]
+
+[ext_resource type="Script" path="res://Scenes/Utils/shop_menu.gd" id="1_4qyor"]
+[ext_resource type="Texture2D" uid="uid://dbsbyua00mc2e" path="res://Assets/UI/Dialogue/name-tag.png" id="1_tm3rl"]
+
+[node name="Shop Menu" type="Node2D"]
+script = ExtResource("1_4qyor")
+
+[node name="Name-tag" type="Sprite2D" parent="."]
+texture_filter = 6
+position = Vector2(4.00006, -32.4316)
+scale = Vector2(1.92956, 8.14272)
+texture = ExtResource("1_tm3rl")
+offset = Vector2(2.92816, -0.359837)
